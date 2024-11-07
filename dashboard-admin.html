@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Admin Dashboard</h1>
+</header>
+
+<div class="content">
+    <section id="admin-section">
+        <div class="action">
+            <h3>Add/Remove Users</h3>
+            <p>Manage user accounts by creating or deleting users.</p>
+            <button id="redirectButton">Add User</button>
+            <button id="redirect-remove-Button">Remove User</button>
+        </div>
+        <div class="action">
+            <h3>Approve Data</h3>
+            <p>Review and approve data submissions from faculty/staff.</p>
+            <button>Approve Data</button>
+        </div>
+        <div class="action">
+            <h3>Generate Reports</h3>
+            <p>Compile all submitted data into an annual report.</p>
+            <button>Generate Report</button>
+        </div>
+        <div class="action">
+            <h3>Settings</h3>
+            <p>Configure settings like data submission deadlines.</p>
+            <button>Update Settings</button>
+        </div>
+    </section>
+
+    <!-- Logout Button -->
+    <div class="logout-button" style="text-align: center; margin-top: 20px;">
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById("redirectButton").onclick = function () {
+        window.location.href = "add-user.html";
+        }
+        document.getElementById("redirect-remove-Button").onclick = function () {
+        window.location.href = "remove-user.html";
+        }
+    function logout() {
+        // Logic for logging out the user
+        alert("You have been logged out.");
+        // Redirect to login page or perform logout action
+        window.location.href = "login.html"; // Change to your login page URL
+    }
+</script>
+
+</body>
+</html>

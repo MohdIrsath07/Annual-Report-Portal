@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Portal - Research and Publication Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Research and Publication Form</h1>
+        <form id="publicationForm">
+            <label for="researchTitle">Research Title:</label>
+            <input type="text" id="researchTitle" placeholder="Enter research title" required>
+
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" placeholder="Enter author name" required>
+
+            <label for="publicationDate">Publication Date:</label>
+            <input type="date" id="publicationDate" required>
+
+            <label for="researchSummary">Research Summary:</label>
+            <textarea id="researchSummary" placeholder="Enter research summary" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Submitted Publications</h2>
+        <div id="publicationList"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('publicationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Get form values
+    const title = document.getElementById('researchTitle').value.trim();
+    const author = document.getElementById('authorName').value.trim();
+    const date = document.getElementById('publicationDate').value;
+    const summary = document.getElementById('researchSummary').value.trim();
+
+    // Create a new publication entry
+    if (title && author && date && summary) {
+        const publicationDiv = document.createElement('div');
+        publicationDiv.classList.add('publication');
+        publicationDiv.innerHTML = `
+            <h3>${title}</h3>
+            <p><strong>Author:</strong> ${author}</p>
+            <p><strong>Publication Date:</strong> ${new Date(date).toLocaleDateString()}</p>
+            <p><strong>Summary:</strong> ${summary}</p>
+            <hr>
+        `;
+
+        // Add the new publication to the list
+        document.getElementById('publicationList').appendChild(publicationDiv);
+
+        // Clear form fields
+        document.getElementById('publicationForm').reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+    </script>
+</body>
+</html>

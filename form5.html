@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Portal - Future Goals & Department Plans Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Future Goals & Department Plans Form</h1>
+        <form id="goalsForm">
+            <label for="departmentName">Department Name:</label>
+            <input type="text" id="departmentName" placeholder="Enter department name" required>
+
+            <label for="goalTitle">Goal Title:</label>
+            <input type="text" id="goalTitle" placeholder="Enter goal title" required>
+
+            <label for="goalDescription">Description of Plan/Goal:</label>
+            <textarea id="goalDescription" placeholder="Enter detailed description of the plan or goal" rows="4" required></textarea>
+
+            <label for="targetDate">Target Date for Completion:</label>
+            <input type="date" id="targetDate" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Submitted Goals & Plans</h2>
+        <div id="goalList"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('goalsForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Get form values
+    const departmentName = document.getElementById('departmentName').value.trim();
+    const goalTitle = document.getElementById('goalTitle').value.trim();
+    const goalDescription = document.getElementById('goalDescription').value.trim();
+    const targetDate = document.getElementById('targetDate').value;
+
+    // Create a new goal entry
+    if (departmentName && goalTitle && goalDescription && targetDate) {
+        const goalDiv = document.createElement('div');
+        goalDiv.classList.add('goal');
+        goalDiv.innerHTML = `
+            <h3>${goalTitle}</h3>
+            <p><strong>Department:</strong> ${departmentName}</p>
+            <p><strong>Description:</strong> ${goalDescription}</p>
+            <p><strong>Target Date:</strong> ${new Date(targetDate).toLocaleDateString()}</p>
+            <hr>
+        `;
+
+        // Add the new goal to the list
+        document.getElementById('goalList').appendChild(goalDiv);
+
+        // Clear form fields
+        document.getElementById('goalsForm').reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+    </script>
+</body>
+</html>

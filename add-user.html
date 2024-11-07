@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page - Add Students</title>
+    <link rel="stylesheet" href="add-user.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Students</h1>
+        <form id="studentForm">
+            <input type="text" id="studentName" placeholder="Enter student name" required>
+            <button type="submit">Add</button>
+        </form>
+        
+        <ul id="studentList"></ul>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission from refreshing the page
+
+    // Get the value of the input field
+    const studentName = document.getElementById('studentName').value.trim();
+
+    // Ensure the input is not empty
+    if (studentName !== '') {
+        // Create a new list item
+        const li = document.createElement('li');
+        li.textContent = studentName;
+
+        // Add the new list item to the student list
+        document.getElementById('studentList').appendChild(li);
+
+        // Clear the input field
+        document.getElementById('studentName').value = '';
+    } else {
+        alert('Please enter a valid student name.');
+    }
+});
+    </script>
+</body>
+</html>

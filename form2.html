@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Forms</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Faculty Forms</h1>
+</header>
+
+<div class="content">
+    <section class="form-section">
+        <h2>Student Activities Form</h2>
+        <form>
+            <label>Event Title</label>
+            <input type="text" placeholder="Enter event title" required>
+
+            <label>Description</label>
+            <textarea placeholder="Provide details of the event" required></textarea>
+
+            <label>Date and Time</label>
+            <input type="datetime-local" required>
+
+            <label>Location</label>
+            <input type="text" placeholder="Enter location" required>
+
+            <label>Organizing Department/Club</label>
+            <input type="text" placeholder="Enter organizing body" required>
+
+            <label>Contact Information</label>
+            <input type="text" placeholder="Coordinator name and contact details" required>
+
+            <label>Event Poster or Banner (optional)</label>
+            <input type="file">
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Additional sections for each form type (Research, Alumni, Goals, Feedback) -->
+    <!-- Repeat the same structure as above for each form type -->
+
+</div>
+
+</body>
+</html>

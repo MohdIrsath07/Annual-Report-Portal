@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Annual Report Portal</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Annual Report Portal</h1>
+        </div>
+        <div class="login-box">
+            <form onsubmit="redirectUser(event)">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <i class="bx bxs-user-circle"></i>
+                    <input type="text" placeholder="Enter your Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="bx bx-building-house"></i>
+                    <select id="roleSelect" class="dropdown-box" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="student">Student</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function redirectUser(event) {
+            event.preventDefault();
+            const role = document.getElementById("roleSelect").value;
+
+            if (role === "admin") {
+                window.location.href = "dashboard_admin.html";
+            } else if (role === "faculty") {
+                window.location.href = "dashboard_faculty.html";
+            } else if (role === "student") {
+                window.location.href = "dashboard_viewer.html";
+            } else {
+                alert("Please select a role.");
+            }
+        }
+    </script>
+</body>
+</html>

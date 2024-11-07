@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header class="header">
+    <h1>Student Dashboard</h1>
+</header>
+
+<div class="content">
+    <section id="viewer-section">
+        <div class="action">
+            <h3>View Reports</h3>
+            <p>Read the generated annual reports.</p>
+            <button>View Report</button>
+        </div>
+        <div class="action">
+            <h3>Download Reports</h3>
+            <p>Download reports in formats like PDF.</p>
+            <button>Download PDF</button>
+        </div>
+        <div class="action">
+            <h3>Feedback</h3>
+            <p>Provide feedback or comments on the reports.</p>
+            <button id="redirectButton">Submit Feedback</button>
+        </div>
+    </section>
+</div>
+
+<!-- Logout Button at the Bottom -->
+ <centre><div class="problem-button">
+<div class="logout-button" style="text-align: center; margin-top: 20px;">
+    <button onclick="logout()">Logout</button>
+</div>
+ </div>
+</centre>
+
+<script>
+     document.getElementById("redirectButton").onclick = function () {
+        window.location.href = "form6.html";
+        }
+    function logout() {
+        // Logic for logging out the user
+        alert("You have been logged out.");
+        // Redirect to login page or perform logout action
+        window.location.href = "login.html"; // Change to your login page URL
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Portal - Feedback/Comments Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback/Comments Form</h1>
+        <form id="feedbackForm">
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" placeholder="Enter your name" required>
+
+            <label for="feedback">Feedback/Comments:</label>
+            <textarea id="feedback" placeholder="Enter your feedback or comments" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Submitted Feedbacks/Comments</h2>
+        <div id="feedbackList"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    // Get form values
+    const userName = document.getElementById('userName').value.trim();
+    const feedback = document.getElementById('feedback').value.trim();
+
+    // Create a new feedback entry
+    if (userName && feedback) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.classList.add('feedback');
+        feedbackDiv.innerHTML = `
+            <p><strong>${userName}:</strong></p>
+            <p>${feedback}</p>
+            <hr>
+        `;
+
+        // Add the new feedback to the list
+        document.getElementById('feedbackList').appendChild(feedbackDiv);
+
+        // Clear form fields
+        document.getElementById('feedbackForm').reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+    </script>
+</body>
+</html>
+

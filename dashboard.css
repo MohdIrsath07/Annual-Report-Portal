@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333; /* Dark text for light background */
+    background-color: #f4f4f9; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #006400; /* Dark green header */
+    color: #ffffff; /* White text for header */
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.content {
+    max-width: 900px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.section-header {
+    color: #006400; /* Dark green for section header */
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.action {
+    background-color: #ffffff; /* White background for action cards */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.3s;
+}
+
+.action:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.action h3 {
+    color: #006
+}

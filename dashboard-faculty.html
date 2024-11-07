@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1>Faculty Dashboard</h1>
+    </header>
+
+    <div class="content">
+        <section id="faculty-section">
+            <!-- Submit Data Button and Academic Achievements Form -->
+            <div class="action">
+                <h3>Submit Data</h3>
+                <p>Enter your academic or other relevant information.</p>
+                <button id="redirectButton">Submit Academic Achievement</button>
+
+                
+            </div>
+
+            <!-- Other Faculty Dashboard Options -->
+            <div class="action">
+                <h3>Edit Submissions</h3>
+                <p>Update or modify your previous data submissions.</p>
+                <button>Edit Submission</button>
+            </div>
+            <div class="action">
+                <h3>Notifications</h3>
+                <p>Get alerts for submission deadlines and updates.</p>
+                <button>View Notifications</button>
+            </div>
+        </section>
+
+        <!-- Logout Button -->
+        <div class="logout-button" style="text-align: center; margin-top: 20px;">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("redirectButton").onclick = function () {
+        window.location.href = "faculty-related-form.html";
+        }
+        // Toggle display of the Academic Achievements Form
+        function toggleForm(formId) {
+            const form = document.getElementById(formId);
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function logout() {
+            // Logic for logging out the user
+            alert("You have been logged out.");
+            // Redirect to login page or perform logout action
+            window.location.href = "login.html"; // Change to your login page URL
+        }
+    </script>
+</body>
+</html>
